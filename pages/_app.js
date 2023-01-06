@@ -5,7 +5,6 @@ import { useState } from "react";
 
 function MyApp({ Component, pageProps }) {
   const [supabase] = useState(() => createBrowserSupabaseClient());
-
   return (
     <SessionContextProvider
       supabaseClient={supabase}

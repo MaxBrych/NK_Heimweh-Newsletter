@@ -1,27 +1,17 @@
-import { Auth, ThemeSupa } from "@supabase/auth-ui-react";
-import Account from "../components/Account";
-import { useSession, useSupabaseClient } from "@supabase/auth-helpers-react";
+import Link from "next/link";
 
 const Home = () => {
-  const session = useSession();
-  const supabase = useSupabaseClient();
-
   return (
-    <div className="flex min-h-screen">
-      <div className="w-full ">
-        {!session ? (
-          <Auth
-            providers={["google", "apple", "twitter"]}
-            supabaseClient={supabase}
-            appearance={{ theme: ThemeSupa }}
-            theme="light"
-          />
-        ) : (
-          <Account session={session} />
-        )}
+    <main className="min-h-screen text-black bg-white ">
+      <div>
+        <h1 className="mb-6 text-black"> Test Link</h1>
+
+        <Link href="/register" className="px-6 py-3 bg-blue-800 rounded-full">
+          {" "}
+          7 Jetzt Abonieren
+        </Link>
       </div>
-      <div className="w-full bg-slate-200"></div>
-    </div>
+    </main>
   );
 };
 
